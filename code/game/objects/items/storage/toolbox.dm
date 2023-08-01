@@ -39,11 +39,6 @@
 	if(has_latches)
 		. += latches
 
-
-/obj/item/storage/toolbox/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] robusts [user.p_them()]self with [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	return (BRUTELOSS)
-
 /obj/item/storage/toolbox/emergency
 	name = "emergency toolbox"
 	icon_state = "red"
@@ -248,6 +243,11 @@
 	name = "ammo can (7.62x39mm)"
 	for (var/i in 1 to 4)
 		new /obj/item/ammo_box/a762_39(src)
+
+/obj/item/storage/toolbox/ammo/a308/PopulateContents()
+	name = "ammo can (.308)"
+	for (var/i in 1 to 4)
+		new /obj/item/ammo_box/a308(src)
 
 /obj/item/storage/toolbox/ammo/c45/PopulateContents()
 	name = "ammo can (.45)"
